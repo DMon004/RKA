@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>rwander</name>
+  <version>0.0.0</version>
+  <description>The rwander package</description>
+  <maintainer email="bee@todo.todo">bee</maintainer>
+  <license>TODO</license>
+
+  
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

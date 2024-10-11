@@ -1,0 +1,9 @@
+source;share/rosbot_spin/hook/pythonpath.ps1
+source;share/rosbot_spin/hook/pythonpath.dsv
+source;share/rosbot_spin/hook/pythonpath.sh
+source;share/rosbot_spin/hook/ament_prefix_path.ps1
+source;share/rosbot_spin/hook/ament_prefix_path.dsv
+source;share/rosbot_spin/hook/ament_prefix_path.sh
+source;../../build/rosbot_spin/share/rosbot_spin/hook/pythonpath_develop.ps1
+source;../../build/rosbot_spin/share/rosbot_spin/hook/pythonpath_develop.dsv
+source;../../build/rosbot_spin/share/rosbot_spin/hook/pythonpath_develop.sh

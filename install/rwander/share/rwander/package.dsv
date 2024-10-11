@@ -1,0 +1,9 @@
+source;share/rwander/hook/pythonpath.ps1
+source;share/rwander/hook/pythonpath.dsv
+source;share/rwander/hook/pythonpath.sh
+source;share/rwander/hook/ament_prefix_path.ps1
+source;share/rwander/hook/ament_prefix_path.dsv
+source;share/rwander/hook/ament_prefix_path.sh
+source;../../build/rwander/share/rwander/hook/pythonpath_develop.ps1
+source;../../build/rwander/share/rwander/hook/pythonpath_develop.dsv
+source;../../build/rwander/share/rwander/hook/pythonpath_develop.sh

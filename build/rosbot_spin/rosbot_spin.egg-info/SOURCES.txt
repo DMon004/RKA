@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+launch/rspin.launch.py
+resource/rosbot_spin
+rosbot_spin/__init__.py
+rosbot_spin/rosbot_spin.py
+rosbot_spin.egg-info/PKG-INFO
+rosbot_spin.egg-info/SOURCES.txt
+rosbot_spin.egg-info/dependency_links.txt
+rosbot_spin.egg-info/entry_points.txt
+rosbot_spin.egg-info/requires.txt
+rosbot_spin.egg-info/top_level.txt
+rosbot_spin.egg-info/zip-safe

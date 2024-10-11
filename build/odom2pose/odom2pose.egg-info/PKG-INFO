@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: odom2pose
+Version: 0.0.0
+Summary: TODO: Package description
+Maintainer: ccplaore
+Maintainer-email: ccplaore@gmail.com
+License: Apache-2.0
+Requires-Dist: setuptools

@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+odom2pose/__init__.py
+odom2pose/odom2pose.py
+odom2pose.egg-info/PKG-INFO
+odom2pose.egg-info/SOURCES.txt
+odom2pose.egg-info/dependency_links.txt
+odom2pose.egg-info/entry_points.txt
+odom2pose.egg-info/requires.txt
+odom2pose.egg-info/top_level.txt
+odom2pose.egg-info/zip-safe
+resource/odom2pose
