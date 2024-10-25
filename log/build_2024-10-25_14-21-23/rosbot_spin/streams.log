@@ -1,0 +1,32 @@
+[1.970s] Invoking command in '/users/1047487/rka/ros/build/rosbot_spin': PYTHONPATH=/users/1047487/rka/ros/build/rosbot_spin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/rosbot_spin/build --no-deps symlink_data
+[2.163s] /users/1047487/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[2.163s]   warnings.warn(msg)
+[2.463s] running develop
+[2.463s] /users/1047487/.local/lib/python3.10/site-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[2.464s] !!
+[2.464s] 
+[2.464s]         ********************************************************************************
+[2.464s]         Please avoid running ``setup.py`` and ``easy_install``.
+[2.464s]         Instead, use pypa/build, pypa/installer or other
+[2.464s]         standards-based tools.
+[2.464s] 
+[2.465s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[2.465s]         ********************************************************************************
+[2.465s] 
+[2.465s] !!
+[2.465s]   easy_install.initialize_options(self)
+[2.873s] running egg_info
+[2.905s] writing rosbot_spin.egg-info/PKG-INFO
+[2.905s] writing dependency_links to rosbot_spin.egg-info/dependency_links.txt
+[2.906s] writing entry points to rosbot_spin.egg-info/entry_points.txt
+[2.906s] writing requirements to rosbot_spin.egg-info/requires.txt
+[2.906s] writing top-level names to rosbot_spin.egg-info/top_level.txt
+[2.970s] reading manifest file 'rosbot_spin.egg-info/SOURCES.txt'
+[2.971s] writing manifest file 'rosbot_spin.egg-info/SOURCES.txt'
+[3.037s] running build_ext
+[3.037s] Creating /users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages/rosbot-spin.egg-link (link to .)
+[3.039s] Installing rspin script to /users/1047487/rka/ros/install/rosbot_spin/lib/rosbot_spin
+[3.039s] 
+[3.039s] Installed /users/1047487/rka/ros/build/rosbot_spin
+[3.039s] running symlink_data
+[3.127s] Invoked command in '/users/1047487/rka/ros/build/rosbot_spin' returned '0': PYTHONPATH=/users/1047487/rka/ros/build/rosbot_spin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/rosbot_spin/build --no-deps symlink_data

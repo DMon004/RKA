@@ -1,0 +1,32 @@
+[1.969s] Invoking command in '/users/1047487/rka/ros/build/rwander': PYTHONPATH=/users/1047487/rka/ros/build/rwander/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/rwander/build --no-deps symlink_data
+[2.170s] /users/1047487/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[2.170s]   warnings.warn(msg)
+[2.489s] running develop
+[2.490s] /users/1047487/.local/lib/python3.10/site-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[2.490s] !!
+[2.490s] 
+[2.490s]         ********************************************************************************
+[2.490s]         Please avoid running ``setup.py`` and ``easy_install``.
+[2.490s]         Instead, use pypa/build, pypa/installer or other
+[2.490s]         standards-based tools.
+[2.490s] 
+[2.490s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[2.491s]         ********************************************************************************
+[2.491s] 
+[2.491s] !!
+[2.491s]   easy_install.initialize_options(self)
+[2.923s] running egg_info
+[2.956s] writing rwander.egg-info/PKG-INFO
+[2.957s] writing dependency_links to rwander.egg-info/dependency_links.txt
+[2.957s] writing entry points to rwander.egg-info/entry_points.txt
+[2.957s] writing requirements to rwander.egg-info/requires.txt
+[2.957s] writing top-level names to rwander.egg-info/top_level.txt
+[3.026s] reading manifest file 'rwander.egg-info/SOURCES.txt'
+[3.028s] writing manifest file 'rwander.egg-info/SOURCES.txt'
+[3.107s] running build_ext
+[3.107s] Creating /users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages/rwander.egg-link (link to .)
+[3.109s] Installing rwander script to /users/1047487/rka/ros/install/rwander/lib/rwander
+[3.110s] 
+[3.110s] Installed /users/1047487/rka/ros/build/rwander
+[3.110s] running symlink_data
+[3.168s] Invoked command in '/users/1047487/rka/ros/build/rwander' returned '0': PYTHONPATH=/users/1047487/rka/ros/build/rwander/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/rwander/build --no-deps symlink_data

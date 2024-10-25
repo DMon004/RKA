@@ -30,10 +30,27 @@ class Robot(Node):
         self._max_range = 100.0
         self._uninitialized = 1
         self._bearings = []
-        self._scan = []
+        self._scan = []   
+    
+    def most_space(self, scan_arr:list):
 
-        
-        
+        mostSpace = -1
+        mostSpaceIndex = -1
+
+        spaceAmount = 0
+
+        for ix in range(len(scan_arr)):
+            if scan_arr[ix] == 1:
+                spaceAmount+=1
+            else:
+                if spaceAmount>mostSpace:
+                    mostSpace=spaceAmount
+                    rightIndex = ix
+                    leftIndex = ix-spaceAmount
+                    mostSpaceIndex = (rightIndex-leftIndex)/2
+                spaceAmount = 0
+        return int(mostSpaceIndex)
+    
     def obstacle_detect(self, scan_msg):
         
         self._scan = scan_msg.ranges
@@ -61,11 +78,18 @@ class Robot(Node):
 
         # Reorganize scan indexes to make it easier to work with. 
         # 0 index corresponds to the back side of the robot for both, scan and bearings.
-        self._scan = [self._scan[i - 800] for i in range(self._scan_count)]    
+        self._scan = [self._scan[i - 800] for i in range(self._scan_count)]  
     
         # TODO: add your code here
+
+        filterScan = [0 if val < 4 else 1 for val in self._scan[400:1200]] 
+        self.get_logger().info("FIletered Scanner " + str(filterScan))
+        mostSpaceIx = self.most_space(filterScan)
+        self.get_logger().info("Index with most SPace: " + str(mostSpaceIx))
         speed = 0.0
-        turn = 0.5
+        turn = 0.00*(400-mostSpaceIx)
+
+        
         ## end TODO
         cmd_vel_msg_ = Twist()
         cmd_vel_msg_.linear.x  = speed
@@ -74,9 +98,10 @@ class Robot(Node):
         self._cmd_vel_pub.publish( cmd_vel_msg_ ) 
     
     def pose_callback(self, msg):
-        self.get_logger().info("Robot pose: x: %.2f, y: %.2f, theta: %.2f"%(msg.x, msg.y, msg.theta))
+        pass
+        #self.get_logger().info("Robot pose: x: %.2f, y: %.2f, theta: %.2f"%(msg.x, msg.y, msg.theta))
         
-
+        pass
                                             
 def main(args=None):
     rclpy.init(args=args)

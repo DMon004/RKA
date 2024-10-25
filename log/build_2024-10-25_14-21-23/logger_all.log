@@ -1,0 +1,240 @@
+[0.119s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.119s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7f818eabace0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f818ebbfa00>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f818ebbfa00>>, mixin_verb=('build',))
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.175s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.175s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/users/1047487/rka/ros'
+[0.175s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.175s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.175s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.175s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.175s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.176s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.189s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.189s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.189s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.189s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.190s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extensions ['ignore', 'ignore_ament_install']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extension 'ignore'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extension 'ignore_ament_install'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extensions ['colcon_pkg']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extension 'colcon_pkg'
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extensions ['colcon_meta']
+[0.191s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extension 'colcon_meta'
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extensions ['ros']
+[0.192s] Level 1:colcon.colcon_core.package_identification:_identify(src/odom2pose) by extension 'ros'
+[0.195s] DEBUG:colcon.colcon_core.package_identification:Package 'src/odom2pose' with type 'ros.ament_python' and name 'odom2pose'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extensions ['ignore', 'ignore_ament_install']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extension 'ignore'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extension 'ignore_ament_install'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extensions ['colcon_pkg']
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extension 'colcon_pkg'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extensions ['colcon_meta']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extension 'colcon_meta'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extensions ['ros']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rosbot_spin) by extension 'ros'
+[0.196s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rosbot_spin' with type 'ros.ament_python' and name 'rosbot_spin'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extensions ['ignore', 'ignore_ament_install']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extension 'ignore'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extension 'ignore_ament_install'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extensions ['colcon_pkg']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extension 'colcon_pkg'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extensions ['colcon_meta']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extension 'colcon_meta'
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extensions ['ros']
+[0.197s] Level 1:colcon.colcon_core.package_identification:_identify(src/rwander) by extension 'ros'
+[0.197s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rwander' with type 'ros.ament_python' and name 'rwander'
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.197s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.222s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.222s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.225s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /users/1047487/rka/ros/install
+[0.227s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 33 installed packages in /opt/rsait_pkgs
+[0.229s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 310 installed packages in /opt/ros/humble
+[0.230s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.277s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'cmake_args' from command line to 'None'
+[0.277s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'cmake_target' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'cmake_clean_cache' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'cmake_clean_first' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'cmake_force_configure' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'ament_cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'catkin_cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'odom2pose' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.278s] DEBUG:colcon.colcon_core.verb:Building package 'odom2pose' with the following arguments: {'ament_cmake_args': None, 'build_base': '/users/1047487/rka/ros/build/odom2pose', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/users/1047487/rka/ros/install/odom2pose', 'merge_install': False, 'path': '/users/1047487/rka/ros/src/odom2pose', 'symlink_install': True, 'test_result_base': None}
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'cmake_target' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'cmake_clean_cache' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'cmake_clean_first' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'cmake_force_configure' from command line to 'False'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'ament_cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'catkin_cmake_args' from command line to 'None'
+[0.278s] Level 5:colcon.colcon_core.verb:set package 'rosbot_spin' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.278s] DEBUG:colcon.colcon_core.verb:Building package 'rosbot_spin' with the following arguments: {'ament_cmake_args': None, 'build_base': '/users/1047487/rka/ros/build/rosbot_spin', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/users/1047487/rka/ros/install/rosbot_spin', 'merge_install': False, 'path': '/users/1047487/rka/ros/src/rosbot_spin', 'symlink_install': True, 'test_result_base': None}
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'cmake_args' from command line to 'None'
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'cmake_target' from command line to 'None'
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'cmake_clean_cache' from command line to 'False'
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'cmake_clean_first' from command line to 'False'
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'cmake_force_configure' from command line to 'False'
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'ament_cmake_args' from command line to 'None'
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'catkin_cmake_args' from command line to 'None'
+[0.279s] Level 5:colcon.colcon_core.verb:set package 'rwander' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.279s] DEBUG:colcon.colcon_core.verb:Building package 'rwander' with the following arguments: {'ament_cmake_args': None, 'build_base': '/users/1047487/rka/ros/build/rwander', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/users/1047487/rka/ros/install/rwander', 'merge_install': False, 'path': '/users/1047487/rka/ros/src/rwander', 'symlink_install': True, 'test_result_base': None}
+[0.279s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.280s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.280s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/users/1047487/rka/ros/src/odom2pose' with build type 'ament_python'
+[0.280s] Level 1:colcon.colcon_core.shell:create_environment_hook('odom2pose', 'ament_prefix_path')
+[0.284s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.284s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/hook/ament_prefix_path.ps1'
+[0.285s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/hook/ament_prefix_path.dsv'
+[0.286s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/hook/ament_prefix_path.sh'
+[0.287s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.287s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.291s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/users/1047487/rka/ros/src/rosbot_spin' with build type 'ament_python'
+[0.291s] Level 1:colcon.colcon_core.shell:create_environment_hook('rosbot_spin', 'ament_prefix_path')
+[0.291s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/hook/ament_prefix_path.ps1'
+[0.292s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/hook/ament_prefix_path.dsv'
+[0.292s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/hook/ament_prefix_path.sh'
+[0.292s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.292s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.296s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/users/1047487/rka/ros/src/rwander' with build type 'ament_python'
+[0.296s] Level 1:colcon.colcon_core.shell:create_environment_hook('rwander', 'ament_prefix_path')
+[0.296s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/rwander/share/rwander/hook/ament_prefix_path.ps1'
+[0.297s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/install/rwander/share/rwander/hook/ament_prefix_path.dsv'
+[0.297s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/rwander/share/rwander/hook/ament_prefix_path.sh'
+[0.297s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.297s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.564s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/users/1047487/rka/ros/src/odom2pose'
+[0.565s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.565s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.832s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/users/1047487/rka/ros/src/rosbot_spin'
+[0.832s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.832s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.095s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/users/1047487/rka/ros/src/rwander'
+[1.096s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.096s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.261s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/users/1047487/rka/ros/build/rosbot_spin': PYTHONPATH=/users/1047487/rka/ros/build/rosbot_spin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/rosbot_spin/build --no-deps symlink_data
+[2.266s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/users/1047487/rka/ros/build/rwander': PYTHONPATH=/users/1047487/rka/ros/build/rwander/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/rwander/build --no-deps symlink_data
+[2.268s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/users/1047487/rka/ros/build/odom2pose': PYTHONPATH=/users/1047487/rka/ros/build/odom2pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/odom2pose/build --no-deps symlink_data
+[3.397s] Level 1:colcon.colcon_core.shell:create_environment_hook('odom2pose', 'pythonpath_develop')
+[3.398s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/users/1047487/rka/ros/build/odom2pose' returned '0': PYTHONPATH=/users/1047487/rka/ros/build/odom2pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/odom2pose/build --no-deps symlink_data
+[3.398s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/build/odom2pose/share/odom2pose/hook/pythonpath_develop.ps1'
+[3.399s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/build/odom2pose/share/odom2pose/hook/pythonpath_develop.dsv'
+[3.400s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/build/odom2pose/share/odom2pose/hook/pythonpath_develop.sh'
+[3.406s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/odom2pose' for CMake module files
+[3.407s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/odom2pose' for CMake config files
+[3.408s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/odom2pose/lib'
+[3.408s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/odom2pose/bin'
+[3.408s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/odom2pose/lib/pkgconfig/odom2pose.pc'
+[3.408s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages'
+[3.408s] Level 1:colcon.colcon_core.shell:create_environment_hook('odom2pose', 'pythonpath')
+[3.409s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/hook/pythonpath.ps1'
+[3.409s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/hook/pythonpath.dsv'
+[3.409s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/hook/pythonpath.sh'
+[3.410s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/odom2pose/bin'
+[3.410s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(odom2pose)
+[3.410s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/package.ps1'
+[3.412s] INFO:colcon.colcon_core.shell:Creating package descriptor '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/package.dsv'
+[3.413s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/package.sh'
+[3.413s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/package.bash'
+[3.415s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/odom2pose/share/odom2pose/package.zsh'
+[3.416s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/users/1047487/rka/ros/install/odom2pose/share/colcon-core/packages/odom2pose)
+[3.417s] Level 1:colcon.colcon_core.shell:create_environment_hook('rosbot_spin', 'pythonpath_develop')
+[3.418s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/build/rosbot_spin/share/rosbot_spin/hook/pythonpath_develop.ps1'
+[3.418s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/users/1047487/rka/ros/build/rosbot_spin' returned '0': PYTHONPATH=/users/1047487/rka/ros/build/rosbot_spin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/rosbot_spin/build --no-deps symlink_data
+[3.419s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/build/rosbot_spin/share/rosbot_spin/hook/pythonpath_develop.dsv'
+[3.419s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/build/rosbot_spin/share/rosbot_spin/hook/pythonpath_develop.sh'
+[3.420s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rosbot_spin' for CMake module files
+[3.421s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rosbot_spin' for CMake config files
+[3.421s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rosbot_spin/lib'
+[3.421s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rosbot_spin/bin'
+[3.421s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rosbot_spin/lib/pkgconfig/rosbot_spin.pc'
+[3.422s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages'
+[3.422s] Level 1:colcon.colcon_core.shell:create_environment_hook('rosbot_spin', 'pythonpath')
+[3.423s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/hook/pythonpath.ps1'
+[3.423s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/hook/pythonpath.dsv'
+[3.424s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/hook/pythonpath.sh'
+[3.424s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rosbot_spin/bin'
+[3.424s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rosbot_spin)
+[3.425s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/package.ps1'
+[3.426s] INFO:colcon.colcon_core.shell:Creating package descriptor '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/package.dsv'
+[3.426s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/package.sh'
+[3.427s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/package.bash'
+[3.427s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/package.zsh'
+[3.428s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/users/1047487/rka/ros/install/rosbot_spin/share/colcon-core/packages/rosbot_spin)
+[3.464s] Level 1:colcon.colcon_core.shell:create_environment_hook('rwander', 'pythonpath_develop')
+[3.464s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/users/1047487/rka/ros/build/rwander' returned '0': PYTHONPATH=/users/1047487/rka/ros/build/rwander/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/rwander/build --no-deps symlink_data
+[3.465s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/build/rwander/share/rwander/hook/pythonpath_develop.ps1'
+[3.465s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/build/rwander/share/rwander/hook/pythonpath_develop.dsv'
+[3.466s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/build/rwander/share/rwander/hook/pythonpath_develop.sh'
+[3.466s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rwander' for CMake module files
+[3.467s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rwander' for CMake config files
+[3.467s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rwander/lib'
+[3.467s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rwander/bin'
+[3.467s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rwander/lib/pkgconfig/rwander.pc'
+[3.468s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages'
+[3.468s] Level 1:colcon.colcon_core.shell:create_environment_hook('rwander', 'pythonpath')
+[3.468s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/rwander/share/rwander/hook/pythonpath.ps1'
+[3.468s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/users/1047487/rka/ros/install/rwander/share/rwander/hook/pythonpath.dsv'
+[3.469s] INFO:colcon.colcon_core.shell:Creating environment hook '/users/1047487/rka/ros/install/rwander/share/rwander/hook/pythonpath.sh'
+[3.469s] Level 1:colcon.colcon_core.environment:checking '/users/1047487/rka/ros/install/rwander/bin'
+[3.469s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rwander)
+[3.469s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/rwander/share/rwander/package.ps1'
+[3.470s] INFO:colcon.colcon_core.shell:Creating package descriptor '/users/1047487/rka/ros/install/rwander/share/rwander/package.dsv'
+[3.470s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/rwander/share/rwander/package.sh'
+[3.471s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/rwander/share/rwander/package.bash'
+[3.471s] INFO:colcon.colcon_core.shell:Creating package script '/users/1047487/rka/ros/install/rwander/share/rwander/package.zsh'
+[3.471s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/users/1047487/rka/ros/install/rwander/share/colcon-core/packages/rwander)
+[3.472s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.472s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.472s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.472s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.479s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.479s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.479s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.514s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.515s] INFO:colcon.colcon_core.shell:Creating prefix script '/users/1047487/rka/ros/install/local_setup.ps1'
+[3.516s] INFO:colcon.colcon_core.shell:Creating prefix util module '/users/1047487/rka/ros/install/_local_setup_util_ps1.py'
+[3.518s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/users/1047487/rka/ros/install/setup.ps1'
+[3.519s] INFO:colcon.colcon_core.shell:Creating prefix script '/users/1047487/rka/ros/install/local_setup.sh'
+[3.520s] INFO:colcon.colcon_core.shell:Creating prefix util module '/users/1047487/rka/ros/install/_local_setup_util_sh.py'
+[3.520s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/users/1047487/rka/ros/install/setup.sh'
+[3.522s] INFO:colcon.colcon_core.shell:Creating prefix script '/users/1047487/rka/ros/install/local_setup.bash'
+[3.522s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/users/1047487/rka/ros/install/setup.bash'
+[3.524s] INFO:colcon.colcon_core.shell:Creating prefix script '/users/1047487/rka/ros/install/local_setup.zsh'
+[3.525s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/users/1047487/rka/ros/install/setup.zsh'
