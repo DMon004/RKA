@@ -1,0 +1,176 @@
+[0.000000] (-) TimerEvent: {}
+[0.000410] (odom2pose) JobQueued: {'identifier': 'odom2pose', 'dependencies': OrderedDict()}
+[0.000751] (rosbot_spin) JobQueued: {'identifier': 'rosbot_spin', 'dependencies': OrderedDict()}
+[0.000919] (rwander) JobQueued: {'identifier': 'rwander', 'dependencies': OrderedDict()}
+[0.001098] (odom2pose) JobStarted: {'identifier': 'odom2pose'}
+[0.010567] (rosbot_spin) JobStarted: {'identifier': 'rosbot_spin'}
+[0.018020] (rwander) JobStarted: {'identifier': 'rwander'}
+[0.099640] (-) TimerEvent: {}
+[0.199966] (-) TimerEvent: {}
+[0.300331] (-) TimerEvent: {}
+[0.400704] (-) TimerEvent: {}
+[0.501064] (-) TimerEvent: {}
+[0.601412] (-) TimerEvent: {}
+[0.701801] (-) TimerEvent: {}
+[0.802091] (-) TimerEvent: {}
+[0.902475] (-) TimerEvent: {}
+[1.002773] (-) TimerEvent: {}
+[1.103145] (-) TimerEvent: {}
+[1.203550] (-) TimerEvent: {}
+[1.303976] (-) TimerEvent: {}
+[1.404326] (-) TimerEvent: {}
+[1.504683] (-) TimerEvent: {}
+[1.605035] (-) TimerEvent: {}
+[1.705363] (-) TimerEvent: {}
+[1.805735] (-) TimerEvent: {}
+[1.906063] (-) TimerEvent: {}
+[2.006368] (-) TimerEvent: {}
+[2.106688] (-) TimerEvent: {}
+[2.206943] (-) TimerEvent: {}
+[2.307319] (-) TimerEvent: {}
+[2.407594] (-) TimerEvent: {}
+[2.507922] (-) TimerEvent: {}
+[2.565647] (rosbot_spin) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/users/1047487/rka/ros/build/rosbot_spin/build', '--no-deps', 'symlink_data'], 'cwd': '/users/1047487/rka/ros/build/rosbot_spin', 'env': {'LESSOPEN': '|~/.config/.lessfilter %s', 'KDE_FULL_SESSION': 'true', 'GZ_SIM_RESOURCE_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'LANGUAGE': 'en_US', 'USER': '1047487', 'PAM_KWALLET5_LOGIN': '/run/user/641706834/kwallet5.socket', 'LC_TIME': 'es_ES.UTF-8', 'XDG_SEAT': 'seat0', 'MATHEMATICA_HOME': '/opt/Mathematica', 'SSH_AGENT_PID': '2141', 'XDG_SESSION_TYPE': 'x11', 'XCURSOR_SIZE': '24', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/rsait_pkgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/users/1047487/.local/lib/python3.10/site-packages/nvidia/cudnn/lib::/usr/local/cuda-12.5/lib64', 'LESS': '-R', 'HOME': '/users/1047487', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'OLDPWD': '/users/1047487/rka/ros/src', 'DESKTOP_SESSION': 'plasma', 'ROS_PYTHON_VERSION': '3', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/users/1047487/.gtkrc:/users/1047487/.config/gtkrc', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'KDE_SESSION_VERSION': '5', 'TF_CPP_MIN_LOG_LEVEL': '1', 'LC_MONETARY': 'es_ES.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:abstract=/tmp/dbus-cWIfQsFWO4,guid=2829ac06beb5ca1590c870ae67091756', 'COLORTERM': 'truecolor', 'QSYS_ROOTDIR': '/opt/intelFPGA/18.1/quartus/sopc_builder/bin', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'COLCON_PREFIX_PATH': '/users/1047487/rka/ros/install:/opt/rsait_pkgs', 'ROS_DISTRO': 'humble', 'LOGNAME': '1047487', 'QT_AUTO_SCREEN_SCALE_FACTOR': '0', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'GAZEBO_MODEL_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'ROS_LOCALHOST_ONLY': '0', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/users/1047487/.gtkrc-2.0:/users/1047487/.config/gtkrc-2.0', 'PATH': '/opt/ros/humble/bin:/usr/local/cuda-12.5/bin:/users/1047487/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/users/1047487/.dotnet/tools:/opt/python/bin', 'SESSION_MANAGER': 'local/U026476:@/tmp/.ICE-unix/2321,unix/U026476:/tmp/.ICE-unix/2321', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session2', 'LC_ADDRESS': 'es_ES.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/641706834', 'XCURSOR_THEME': 'Layan-white-cursors', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'es_ES.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'LC_TELEPHONE': 'es_ES.UTF-8', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/users/1047487/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/tmp/ssh-XXXXXXrBCsGG/agent.1999', 'ROS_DOMAIN_ID': '76', 'AMENT_PREFIX_PATH': '/users/1047487/rka/ros/install/rwander:/users/1047487/rka/ros/install/rosbot_spin:/users/1047487/rka/ros/install/odom2pose:/opt/rsait_pkgs:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'es_ES.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:6224662c-8cb2-4cce-93c8-89b231f2b78d', 'QT_ACCESSIBILITY': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'LC_MEASUREMENT': 'es_ES.UTF-8', 'GPG_AGENT_INFO': '/run/user/641706834/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'es_ES.UTF-8', 'GZ_VERSION': 'fortress', 'XDG_VTNR': '1', 'INTELFPGAOCLSDKROOT': '/opt/intelFPGA/18.1/hld', 'PWD': '/users/1047487/rka/ros/build/rosbot_spin', 'XDG_CONFIG_DIRS': '/users/1047487/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'XDG_DATA_DIRS': '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/users/1047487/rka/ros/build/rosbot_spin/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages:/users/1047487/rka/ros/build/rwander:/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages:/users/1047487/rka/ros/build/rosbot_spin:/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages:/users/1047487/rka/ros/build/odom2pose:/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages:/opt/rsait_pkgs/local/lib/python3.10/dist-packages:/opt/rsait_pkgs/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'es_ES.UTF-8', 'HUSARION_ROS_BUILD': 'simulation', 'LC_PAPER': 'es_ES.UTF-8', 'KDE_SESSION_UID': '641706834', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/opt/rsait_pkgs'}, 'shell': False}
+[2.589393] (rwander) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/users/1047487/rka/ros/build/rwander/build', '--no-deps', 'symlink_data'], 'cwd': '/users/1047487/rka/ros/build/rwander', 'env': {'LESSOPEN': '|~/.config/.lessfilter %s', 'KDE_FULL_SESSION': 'true', 'GZ_SIM_RESOURCE_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'LANGUAGE': 'en_US', 'USER': '1047487', 'PAM_KWALLET5_LOGIN': '/run/user/641706834/kwallet5.socket', 'LC_TIME': 'es_ES.UTF-8', 'XDG_SEAT': 'seat0', 'MATHEMATICA_HOME': '/opt/Mathematica', 'SSH_AGENT_PID': '2141', 'XDG_SESSION_TYPE': 'x11', 'XCURSOR_SIZE': '24', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/rsait_pkgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/users/1047487/.local/lib/python3.10/site-packages/nvidia/cudnn/lib::/usr/local/cuda-12.5/lib64', 'LESS': '-R', 'HOME': '/users/1047487', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'OLDPWD': '/users/1047487/rka/ros/src', 'DESKTOP_SESSION': 'plasma', 'ROS_PYTHON_VERSION': '3', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/users/1047487/.gtkrc:/users/1047487/.config/gtkrc', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'KDE_SESSION_VERSION': '5', 'TF_CPP_MIN_LOG_LEVEL': '1', 'LC_MONETARY': 'es_ES.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:abstract=/tmp/dbus-cWIfQsFWO4,guid=2829ac06beb5ca1590c870ae67091756', 'COLORTERM': 'truecolor', 'QSYS_ROOTDIR': '/opt/intelFPGA/18.1/quartus/sopc_builder/bin', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'COLCON_PREFIX_PATH': '/users/1047487/rka/ros/install:/opt/rsait_pkgs', 'ROS_DISTRO': 'humble', 'LOGNAME': '1047487', 'QT_AUTO_SCREEN_SCALE_FACTOR': '0', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'GAZEBO_MODEL_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'ROS_LOCALHOST_ONLY': '0', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/users/1047487/.gtkrc-2.0:/users/1047487/.config/gtkrc-2.0', 'PATH': '/opt/ros/humble/bin:/usr/local/cuda-12.5/bin:/users/1047487/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/users/1047487/.dotnet/tools:/opt/python/bin', 'SESSION_MANAGER': 'local/U026476:@/tmp/.ICE-unix/2321,unix/U026476:/tmp/.ICE-unix/2321', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session2', 'LC_ADDRESS': 'es_ES.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/641706834', 'XCURSOR_THEME': 'Layan-white-cursors', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'es_ES.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'LC_TELEPHONE': 'es_ES.UTF-8', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/users/1047487/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/tmp/ssh-XXXXXXrBCsGG/agent.1999', 'ROS_DOMAIN_ID': '76', 'AMENT_PREFIX_PATH': '/users/1047487/rka/ros/install/rwander:/users/1047487/rka/ros/install/rosbot_spin:/users/1047487/rka/ros/install/odom2pose:/opt/rsait_pkgs:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'es_ES.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:6224662c-8cb2-4cce-93c8-89b231f2b78d', 'QT_ACCESSIBILITY': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'LC_MEASUREMENT': 'es_ES.UTF-8', 'GPG_AGENT_INFO': '/run/user/641706834/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'es_ES.UTF-8', 'GZ_VERSION': 'fortress', 'XDG_VTNR': '1', 'INTELFPGAOCLSDKROOT': '/opt/intelFPGA/18.1/hld', 'PWD': '/users/1047487/rka/ros/build/rwander', 'XDG_CONFIG_DIRS': '/users/1047487/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'XDG_DATA_DIRS': '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/users/1047487/rka/ros/build/rwander/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages:/users/1047487/rka/ros/build/rwander:/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages:/users/1047487/rka/ros/build/rosbot_spin:/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages:/users/1047487/rka/ros/build/odom2pose:/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages:/opt/rsait_pkgs/local/lib/python3.10/dist-packages:/opt/rsait_pkgs/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'es_ES.UTF-8', 'HUSARION_ROS_BUILD': 'simulation', 'LC_PAPER': 'es_ES.UTF-8', 'KDE_SESSION_UID': '641706834', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/opt/rsait_pkgs'}, 'shell': False}
+[2.597732] (odom2pose) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/users/1047487/rka/ros/build/odom2pose/build', '--no-deps', 'symlink_data'], 'cwd': '/users/1047487/rka/ros/build/odom2pose', 'env': {'LESSOPEN': '|~/.config/.lessfilter %s', 'KDE_FULL_SESSION': 'true', 'GZ_SIM_RESOURCE_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'LANGUAGE': 'en_US', 'USER': '1047487', 'PAM_KWALLET5_LOGIN': '/run/user/641706834/kwallet5.socket', 'LC_TIME': 'es_ES.UTF-8', 'XDG_SEAT': 'seat0', 'MATHEMATICA_HOME': '/opt/Mathematica', 'SSH_AGENT_PID': '2141', 'XDG_SESSION_TYPE': 'x11', 'XCURSOR_SIZE': '24', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/rsait_pkgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/users/1047487/.local/lib/python3.10/site-packages/nvidia/cudnn/lib::/usr/local/cuda-12.5/lib64', 'LESS': '-R', 'HOME': '/users/1047487', 'KDE_APPLICATIONS_AS_SCOPE': '1', 'OLDPWD': '/users/1047487/rka/ros/src', 'DESKTOP_SESSION': 'plasma', 'ROS_PYTHON_VERSION': '3', 'GTK_RC_FILES': '/etc/gtk/gtkrc:/users/1047487/.gtkrc:/users/1047487/.config/gtkrc', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'KDE_SESSION_VERSION': '5', 'TF_CPP_MIN_LOG_LEVEL': '1', 'LC_MONETARY': 'es_ES.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:abstract=/tmp/dbus-cWIfQsFWO4,guid=2829ac06beb5ca1590c870ae67091756', 'COLORTERM': 'truecolor', 'QSYS_ROOTDIR': '/opt/intelFPGA/18.1/quartus/sopc_builder/bin', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873', 'COLCON_PREFIX_PATH': '/users/1047487/rka/ros/install:/opt/rsait_pkgs', 'ROS_DISTRO': 'humble', 'LOGNAME': '1047487', 'QT_AUTO_SCREEN_SCALE_FACTOR': '0', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'GAZEBO_MODEL_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'ROS_LOCALHOST_ONLY': '0', 'GTK2_RC_FILES': '/etc/gtk-2.0/gtkrc:/users/1047487/.gtkrc-2.0:/users/1047487/.config/gtkrc-2.0', 'PATH': '/opt/ros/humble/bin:/usr/local/cuda-12.5/bin:/users/1047487/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/users/1047487/.dotnet/tools:/opt/python/bin', 'SESSION_MANAGER': 'local/U026476:@/tmp/.ICE-unix/2321,unix/U026476:/tmp/.ICE-unix/2321', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session2', 'LC_ADDRESS': 'es_ES.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/641706834', 'XCURSOR_THEME': 'Layan-white-cursors', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'es_ES.UTF-8', 'XDG_CURRENT_DESKTOP': 'KDE', 'LC_TELEPHONE': 'es_ES.UTF-8', 'XDG_SESSION_DESKTOP': 'KDE', 'XAUTHORITY': '/users/1047487/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'SSH_AUTH_SOCK': '/tmp/ssh-XXXXXXrBCsGG/agent.1999', 'ROS_DOMAIN_ID': '76', 'AMENT_PREFIX_PATH': '/users/1047487/rka/ros/install/rwander:/users/1047487/rka/ros/install/rosbot_spin:/users/1047487/rka/ros/install/odom2pose:/opt/rsait_pkgs:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'es_ES.UTF-8', 'TERMINATOR_UUID': 'urn:uuid:6224662c-8cb2-4cce-93c8-89b231f2b78d', 'QT_ACCESSIBILITY': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/rsait_pkgs/share:/opt/rsait_pkgs/share/husarion_gz_worlds/models:/opt/rsait_pkgs/share/gazebo_worlds/models', 'LC_MEASUREMENT': 'es_ES.UTF-8', 'GPG_AGENT_INFO': '/run/user/641706834/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'es_ES.UTF-8', 'GZ_VERSION': 'fortress', 'XDG_VTNR': '1', 'INTELFPGAOCLSDKROOT': '/opt/intelFPGA/18.1/hld', 'PWD': '/users/1047487/rka/ros/build/odom2pose', 'XDG_CONFIG_DIRS': '/users/1047487/.config/kdedefaults:/etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings', 'XDG_DATA_DIRS': '/usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/users/1047487/rka/ros/build/odom2pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages:/users/1047487/rka/ros/build/rwander:/users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages:/users/1047487/rka/ros/build/rosbot_spin:/users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages:/users/1047487/rka/ros/build/odom2pose:/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages:/opt/rsait_pkgs/local/lib/python3.10/dist-packages:/opt/rsait_pkgs/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'es_ES.UTF-8', 'HUSARION_ROS_BUILD': 'simulation', 'LC_PAPER': 'es_ES.UTF-8', 'KDE_SESSION_UID': '641706834', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/opt/rsait_pkgs'}, 'shell': False}
+[2.608015] (-) TimerEvent: {}
+[2.708349] (-) TimerEvent: {}
+[2.808619] (-) TimerEvent: {}
+[2.844675] (rosbot_spin) StderrLine: {'line': b"/users/1047487/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'\n"}
+[2.844887] (rosbot_spin) StderrLine: {'line': b'  warnings.warn(msg)\n'}
+[2.867773] (odom2pose) StderrLine: {'line': b"/users/1047487/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'\n"}
+[2.868242] (odom2pose) StderrLine: {'line': b'  warnings.warn(msg)\n'}
+[2.870838] (rwander) StderrLine: {'line': b"/users/1047487/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'\n"}
+[2.871089] (rwander) StderrLine: {'line': b'  warnings.warn(msg)\n'}
+[2.908723] (-) TimerEvent: {}
+[3.009138] (-) TimerEvent: {}
+[3.109474] (-) TimerEvent: {}
+[3.209764] (-) TimerEvent: {}
+[3.265958] (rosbot_spin) StdoutLine: {'line': b'running develop\n'}
+[3.266370] (rosbot_spin) StderrLine: {'line': b'/users/1047487/.local/lib/python3.10/site-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.\n'}
+[3.266513] (rosbot_spin) StderrLine: {'line': b'!!\n'}
+[3.266625] (rosbot_spin) StderrLine: {'line': b'\n'}
+[3.266735] (rosbot_spin) StderrLine: {'line': b'        ********************************************************************************\n'}
+[3.266837] (rosbot_spin) StderrLine: {'line': b'        Please avoid running ``setup.py`` and ``easy_install``.\n'}
+[3.266928] (rosbot_spin) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[3.267027] (rosbot_spin) StderrLine: {'line': b'        standards-based tools.\n'}
+[3.267136] (rosbot_spin) StderrLine: {'line': b'\n'}
+[3.267201] (rosbot_spin) StderrLine: {'line': b'        See https://github.com/pypa/setuptools/issues/917 for details.\n'}
+[3.267288] (rosbot_spin) StderrLine: {'line': b'        ********************************************************************************\n'}
+[3.267355] (rosbot_spin) StderrLine: {'line': b'\n'}
+[3.267410] (rosbot_spin) StderrLine: {'line': b'!!\n'}
+[3.267514] (rosbot_spin) StderrLine: {'line': b'  easy_install.initialize_options(self)\n'}
+[3.292962] (odom2pose) StdoutLine: {'line': b'running develop\n'}
+[3.293330] (odom2pose) StderrLine: {'line': b'/users/1047487/.local/lib/python3.10/site-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.\n'}
+[3.293492] (odom2pose) StderrLine: {'line': b'!!\n'}
+[3.293624] (odom2pose) StderrLine: {'line': b'\n'}
+[3.293747] (odom2pose) StderrLine: {'line': b'        ********************************************************************************\n'}
+[3.293887] (odom2pose) StderrLine: {'line': b'        Please avoid running ``setup.py`` and ``easy_install``.\n'}
+[3.294006] (odom2pose) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[3.294127] (odom2pose) StderrLine: {'line': b'        standards-based tools.\n'}
+[3.294245] (odom2pose) StderrLine: {'line': b'\n'}
+[3.294371] (odom2pose) StderrLine: {'line': b'        See https://github.com/pypa/setuptools/issues/917 for details.\n'}
+[3.294487] (odom2pose) StderrLine: {'line': b'        ********************************************************************************\n'}
+[3.294616] (odom2pose) StderrLine: {'line': b'\n'}
+[3.294731] (odom2pose) StderrLine: {'line': b'!!\n'}
+[3.294883] (odom2pose) StderrLine: {'line': b'  easy_install.initialize_options(self)\n'}
+[3.295859] (rwander) StdoutLine: {'line': b'running develop\n'}
+[3.296115] (rwander) StderrLine: {'line': b'/users/1047487/.local/lib/python3.10/site-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.\n'}
+[3.296203] (rwander) StderrLine: {'line': b'!!\n'}
+[3.296308] (rwander) StderrLine: {'line': b'\n'}
+[3.296378] (rwander) StderrLine: {'line': b'        ********************************************************************************\n'}
+[3.296440] (rwander) StderrLine: {'line': b'        Please avoid running ``setup.py`` and ``easy_install``.\n'}
+[3.296502] (rwander) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[3.296559] (rwander) StderrLine: {'line': b'        standards-based tools.\n'}
+[3.296613] (rwander) StderrLine: {'line': b'\n'}
+[3.296669] (rwander) StderrLine: {'line': b'        See https://github.com/pypa/setuptools/issues/917 for details.\n'}
+[3.296728] (rwander) StderrLine: {'line': b'        ********************************************************************************\n'}
+[3.296804] (rwander) StderrLine: {'line': b'\n'}
+[3.296881] (rwander) StderrLine: {'line': b'!!\n'}
+[3.296985] (rwander) StderrLine: {'line': b'  easy_install.initialize_options(self)\n'}
+[3.309854] (-) TimerEvent: {}
+[3.410219] (-) TimerEvent: {}
+[3.510561] (-) TimerEvent: {}
+[3.610880] (-) TimerEvent: {}
+[3.711155] (-) TimerEvent: {}
+[3.811435] (-) TimerEvent: {}
+[3.845566] (rosbot_spin) StdoutLine: {'line': b'running egg_info\n'}
+[3.845831] (rosbot_spin) StdoutLine: {'line': b'creating rosbot_spin.egg-info\n'}
+[3.862730] (odom2pose) StdoutLine: {'line': b'running egg_info\n'}
+[3.862972] (odom2pose) StdoutLine: {'line': b'creating odom2pose.egg-info\n'}
+[3.874794] (rwander) StdoutLine: {'line': b'running egg_info\n'}
+[3.875084] (rwander) StdoutLine: {'line': b'creating rwander.egg-info\n'}
+[3.888252] (rosbot_spin) StdoutLine: {'line': b'writing rosbot_spin.egg-info/PKG-INFO\n'}
+[3.888829] (rosbot_spin) StdoutLine: {'line': b'writing dependency_links to rosbot_spin.egg-info/dependency_links.txt\n'}
+[3.889110] (rosbot_spin) StdoutLine: {'line': b'writing entry points to rosbot_spin.egg-info/entry_points.txt\n'}
+[3.889320] (rosbot_spin) StdoutLine: {'line': b'writing requirements to rosbot_spin.egg-info/requires.txt\n'}
+[3.889503] (rosbot_spin) StdoutLine: {'line': b'writing top-level names to rosbot_spin.egg-info/top_level.txt\n'}
+[3.889674] (rosbot_spin) StdoutLine: {'line': b"writing manifest file 'rosbot_spin.egg-info/SOURCES.txt'\n"}
+[3.907177] (odom2pose) StdoutLine: {'line': b'writing odom2pose.egg-info/PKG-INFO\n'}
+[3.907835] (odom2pose) StdoutLine: {'line': b'writing dependency_links to odom2pose.egg-info/dependency_links.txt\n'}
+[3.908111] (odom2pose) StdoutLine: {'line': b'writing entry points to odom2pose.egg-info/entry_points.txt\n'}
+[3.908341] (odom2pose) StdoutLine: {'line': b'writing requirements to odom2pose.egg-info/requires.txt\n'}
+[3.908526] (odom2pose) StdoutLine: {'line': b'writing top-level names to odom2pose.egg-info/top_level.txt\n'}
+[3.908664] (odom2pose) StdoutLine: {'line': b"writing manifest file 'odom2pose.egg-info/SOURCES.txt'\n"}
+[3.911495] (-) TimerEvent: {}
+[3.919558] (rwander) StdoutLine: {'line': b'writing rwander.egg-info/PKG-INFO\n'}
+[3.920155] (rwander) StdoutLine: {'line': b'writing dependency_links to rwander.egg-info/dependency_links.txt\n'}
+[3.920601] (rwander) StdoutLine: {'line': b'writing entry points to rwander.egg-info/entry_points.txt\n'}
+[3.920787] (rwander) StdoutLine: {'line': b'writing requirements to rwander.egg-info/requires.txt\n'}
+[3.920946] (rwander) StdoutLine: {'line': b'writing top-level names to rwander.egg-info/top_level.txt\n'}
+[3.921110] (rwander) StdoutLine: {'line': b"writing manifest file 'rwander.egg-info/SOURCES.txt'\n"}
+[3.963902] (rwander) StdoutLine: {'line': b"reading manifest file 'rwander.egg-info/SOURCES.txt'\n"}
+[3.965225] (rwander) StdoutLine: {'line': b"writing manifest file 'rwander.egg-info/SOURCES.txt'\n"}
+[3.979675] (rosbot_spin) StdoutLine: {'line': b"reading manifest file 'rosbot_spin.egg-info/SOURCES.txt'\n"}
+[3.981181] (rosbot_spin) StdoutLine: {'line': b"writing manifest file 'rosbot_spin.egg-info/SOURCES.txt'\n"}
+[3.999730] (odom2pose) StdoutLine: {'line': b"reading manifest file 'odom2pose.egg-info/SOURCES.txt'\n"}
+[4.001106] (odom2pose) StdoutLine: {'line': b"writing manifest file 'odom2pose.egg-info/SOURCES.txt'\n"}
+[4.011604] (-) TimerEvent: {}
+[4.060155] (rwander) StdoutLine: {'line': b'running build_ext\n'}
+[4.071595] (rosbot_spin) StdoutLine: {'line': b'running build_ext\n'}
+[4.071914] (rosbot_spin) StdoutLine: {'line': b'Creating /users/1047487/rka/ros/install/rosbot_spin/lib/python3.10/site-packages/rosbot-spin.egg-link (link to .)\n'}
+[4.073905] (rosbot_spin) StdoutLine: {'line': b'Installing rspin script to /users/1047487/rka/ros/install/rosbot_spin/lib/rosbot_spin\n'}
+[4.074332] (rosbot_spin) StdoutLine: {'line': b'\n'}
+[4.074496] (rosbot_spin) StdoutLine: {'line': b'Installed /users/1047487/rka/ros/build/rosbot_spin\n'}
+[4.074584] (rosbot_spin) StdoutLine: {'line': b'running symlink_data\n'}
+[4.074689] (rosbot_spin) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rosbot_spin/share/ament_index\n'}
+[4.075020] (rosbot_spin) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rosbot_spin/share/ament_index/resource_index\n'}
+[4.075156] (rosbot_spin) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rosbot_spin/share/ament_index/resource_index/packages\n'}
+[4.075306] (rosbot_spin) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/rosbot_spin/resource/rosbot_spin -> /users/1047487/rka/ros/install/rosbot_spin/share/ament_index/resource_index/packages\n'}
+[4.075457] (rosbot_spin) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/rosbot_spin/package.xml -> /users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin\n'}
+[4.075556] (rosbot_spin) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/launch\n'}
+[4.075641] (rosbot_spin) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/rosbot_spin/launch/rspin.launch.py -> /users/1047487/rka/ros/install/rosbot_spin/share/rosbot_spin/launch\n'}
+[4.094840] (odom2pose) StdoutLine: {'line': b'running build_ext\n'}
+[4.095100] (odom2pose) StdoutLine: {'line': b'Creating /users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages/odom2pose.egg-link (link to .)\n'}
+[4.095971] (odom2pose) StdoutLine: {'line': b'Installing odom2pose script to /users/1047487/rka/ros/install/odom2pose/lib/odom2pose\n'}
+[4.096336] (odom2pose) StdoutLine: {'line': b'\n'}
+[4.096475] (odom2pose) StdoutLine: {'line': b'Installed /users/1047487/rka/ros/build/odom2pose\n'}
+[4.096564] (odom2pose) StdoutLine: {'line': b'running symlink_data\n'}
+[4.096715] (odom2pose) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/odom2pose/share/ament_index\n'}
+[4.096912] (odom2pose) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/odom2pose/share/ament_index/resource_index\n'}
+[4.097070] (odom2pose) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/odom2pose/share/ament_index/resource_index/packages\n'}
+[4.097190] (odom2pose) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/odom2pose/resource/odom2pose -> /users/1047487/rka/ros/install/odom2pose/share/ament_index/resource_index/packages\n'}
+[4.097303] (odom2pose) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/odom2pose/package.xml -> /users/1047487/rka/ros/install/odom2pose/share/odom2pose\n'}
+[4.111573] (rwander) StdoutLine: {'line': b'Creating /users/1047487/rka/ros/install/rwander/lib/python3.10/site-packages/rwander.egg-link (link to .)\n'}
+[4.111908] (-) TimerEvent: {}
+[4.113118] (rwander) StdoutLine: {'line': b'Installing rwander script to /users/1047487/rka/ros/install/rwander/lib/rwander\n'}
+[4.113621] (rwander) StdoutLine: {'line': b'\n'}
+[4.113745] (rwander) StdoutLine: {'line': b'Installed /users/1047487/rka/ros/build/rwander\n'}
+[4.113863] (rwander) StdoutLine: {'line': b'running symlink_data\n'}
+[4.114231] (rwander) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rwander/share/ament_index\n'}
+[4.114418] (rwander) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rwander/share/ament_index/resource_index\n'}
+[4.114574] (rwander) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rwander/share/ament_index/resource_index/packages\n'}
+[4.114741] (rwander) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/rwander/resource/rwander -> /users/1047487/rka/ros/install/rwander/share/ament_index/resource_index/packages\n'}
+[4.115117] (rwander) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/rwander/package.xml -> /users/1047487/rka/ros/install/rwander/share/rwander\n'}
+[4.115294] (rwander) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rwander/share/rwander/launch\n'}
+[4.115487] (rwander) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/rwander/launch/rwander.launch.py -> /users/1047487/rka/ros/install/rwander/share/rwander/launch\n'}
+[4.115698] (rwander) StdoutLine: {'line': b'creating /users/1047487/rka/ros/install/rwander/share/rwander/maps\n'}
+[4.115919] (rwander) StdoutLine: {'line': b'symbolically linking /users/1047487/rka/ros/build/rwander/maps/map.png -> /users/1047487/rka/ros/install/rwander/share/rwander/maps\n'}
+[4.192328] (rosbot_spin) CommandEnded: {'returncode': 0}
+[4.208175] (rosbot_spin) JobEnded: {'identifier': 'rosbot_spin', 'rc': 0}
+[4.211998] (-) TimerEvent: {}
+[4.217074] (odom2pose) CommandEnded: {'returncode': 0}
+[4.228081] (odom2pose) JobEnded: {'identifier': 'odom2pose', 'rc': 0}
+[4.229535] (rwander) CommandEnded: {'returncode': 0}
+[4.242008] (rwander) JobEnded: {'identifier': 'rwander', 'rc': 0}
+[4.243272] (-) EventReactorShutdown: {}

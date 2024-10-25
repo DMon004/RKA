@@ -23,7 +23,7 @@ def generate_launch_description():
 			{"input_topic": "gz_pose"},
 			{"output_topic": "rosbot_pose"},
 		],
-		output='screen',
+		# output='screen',
 		emulate_tty=True,
 	)
     return LaunchDescription([

@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
+import glob
+from ament_index_python import get_package_share_directory
 import rclpy
 import rclpy.logging
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist, Pose2D
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+
+
 
 class Robot(Node):
     def __init__(self):
@@ -29,6 +31,8 @@ class Robot(Node):
         self._uninitialized = 1
         self._bearings = []
         self._scan = []
+
+        
         
     def obstacle_detect(self, scan_msg):
         
@@ -61,9 +65,8 @@ class Robot(Node):
     
         # TODO: add your code here
         speed = 0.0
-        turn = 0.3
-
-
+        turn = 0.5
+        ## end TODO
         cmd_vel_msg_ = Twist()
         cmd_vel_msg_.linear.x  = speed
         cmd_vel_msg_.linear.y  = 0.0
@@ -72,10 +75,7 @@ class Robot(Node):
     
     def pose_callback(self, msg):
         self.get_logger().info("Robot pose: x: %.2f, y: %.2f, theta: %.2f"%(msg.x, msg.y, msg.theta))
-    
-    def save_robot_path(self):
-        # TODO: add your code here
-        self.get_logger().info("Robot path saved")
+        
 
                                             
 def main(args=None):
@@ -85,8 +85,7 @@ def main(args=None):
         rclpy.spin(rwander_node)
     except KeyboardInterrupt:
         rwander_node.get_logger().info("Node interrupted by keyboard (CTRL+C)")
-    finally:
-        rwander_node.save_robot_path()  
+    finally:  
         rwander_node.destroy_node()  
         rclpy.shutdown()
     

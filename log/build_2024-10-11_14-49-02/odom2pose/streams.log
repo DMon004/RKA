@@ -1,0 +1,39 @@
+[2.598s] Invoking command in '/users/1047487/rka/ros/build/odom2pose': PYTHONPATH=/users/1047487/rka/ros/build/odom2pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/odom2pose/build --no-deps symlink_data
+[2.867s] /users/1047487/.local/lib/python3.10/site-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[2.867s]   warnings.warn(msg)
+[3.292s] running develop
+[3.292s] /users/1047487/.local/lib/python3.10/site-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[3.292s] !!
+[3.293s] 
+[3.293s]         ********************************************************************************
+[3.293s]         Please avoid running ``setup.py`` and ``easy_install``.
+[3.293s]         Instead, use pypa/build, pypa/installer or other
+[3.293s]         standards-based tools.
+[3.293s] 
+[3.293s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[3.293s]         ********************************************************************************
+[3.294s] 
+[3.294s] !!
+[3.294s]   easy_install.initialize_options(self)
+[3.862s] running egg_info
+[3.862s] creating odom2pose.egg-info
+[3.906s] writing odom2pose.egg-info/PKG-INFO
+[3.907s] writing dependency_links to odom2pose.egg-info/dependency_links.txt
+[3.907s] writing entry points to odom2pose.egg-info/entry_points.txt
+[3.907s] writing requirements to odom2pose.egg-info/requires.txt
+[3.907s] writing top-level names to odom2pose.egg-info/top_level.txt
+[3.908s] writing manifest file 'odom2pose.egg-info/SOURCES.txt'
+[3.999s] reading manifest file 'odom2pose.egg-info/SOURCES.txt'
+[4.000s] writing manifest file 'odom2pose.egg-info/SOURCES.txt'
+[4.094s] running build_ext
+[4.094s] Creating /users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages/odom2pose.egg-link (link to .)
+[4.095s] Installing odom2pose script to /users/1047487/rka/ros/install/odom2pose/lib/odom2pose
+[4.095s] 
+[4.095s] Installed /users/1047487/rka/ros/build/odom2pose
+[4.096s] running symlink_data
+[4.096s] creating /users/1047487/rka/ros/install/odom2pose/share/ament_index
+[4.096s] creating /users/1047487/rka/ros/install/odom2pose/share/ament_index/resource_index
+[4.096s] creating /users/1047487/rka/ros/install/odom2pose/share/ament_index/resource_index/packages
+[4.096s] symbolically linking /users/1047487/rka/ros/build/odom2pose/resource/odom2pose -> /users/1047487/rka/ros/install/odom2pose/share/ament_index/resource_index/packages
+[4.096s] symbolically linking /users/1047487/rka/ros/build/odom2pose/package.xml -> /users/1047487/rka/ros/install/odom2pose/share/odom2pose
+[4.217s] Invoked command in '/users/1047487/rka/ros/build/odom2pose' returned '0': PYTHONPATH=/users/1047487/rka/ros/build/odom2pose/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/users/1047487/rka/ros/install/odom2pose/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /users/1047487/rka/ros/build/odom2pose/build --no-deps symlink_data
