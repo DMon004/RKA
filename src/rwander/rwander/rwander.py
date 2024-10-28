@@ -47,7 +47,7 @@ class Robot(Node):
                     mostSpace=spaceAmount
                     rightIndex = ix
                     leftIndex = ix-spaceAmount
-                    mostSpaceIndex = (rightIndex-leftIndex)/2
+                    mostSpaceIndex = (rightIndex+leftIndex)/2
                 spaceAmount = 0
         return int(mostSpaceIndex)
     
@@ -82,12 +82,14 @@ class Robot(Node):
     
         # TODO: add your code here
 
-        filterScan = [0 if val < 4 else 1 for val in self._scan[400:1200]] 
+        filterScan = [0 if val < 3 else 1 for val in self._scan[400:1200]] 
         self.get_logger().info("FIletered Scanner " + str(filterScan))
         mostSpaceIx = self.most_space(filterScan)
         self.get_logger().info("Index with most SPace: " + str(mostSpaceIx))
-        speed = 0.0
-        turn = 0.00*(400-mostSpaceIx)
+        turn = 0.025*(mostSpaceIx-400)
+        speed = abs(8/(turn+0.0001))
+        # turn = 0.0
+        # speed = 0.0
 
         
         ## end TODO
