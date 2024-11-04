@@ -34,30 +34,49 @@ class Robot(Node):
     
     def most_space(self, scan_arr:list):
 
-        mostSpace = -1
         mostSpaceIndex = -1
         maxSpaceWeight = -1
+        mostDepthIndex = -1
         wayDepth = -1
 
         spaceAmount = 0
 
         for ix in range(len(scan_arr)):
-            if scan_arr[ix] > 3:
+            if scan_arr[ix] > 4.5:
                 spaceAmount+=1
                 if wayDepth<scan_arr[ix]:
                     wayDepth = scan_arr[ix]
+                    mostDepthIndex = ix
             else:
-                cur_weight = spaceAmount*0.6 + wayDepth*0.4
+                cur_weight = spaceAmount*0.9 + wayDepth*0.1
                 # Calculate Weight amountSpace*0.6 + maxDepth*0.4
                 if cur_weight>maxSpaceWeight: # if new weight> max weight
                     maxSpaceWeight = cur_weight
                     rightIndex = ix
                     leftIndex = ix-spaceAmount
-                    mostSpaceIndex = (rightIndex+leftIndex)/2
+                    spaceIndex = (rightIndex+leftIndex)/2
+                    mostSpaceIndex = spaceIndex
+                    #mostSpaceIndex = (spaceIndex+mostDepthIndex)/2
                 spaceAmount = 0
                 wayDepth = -1
+                mostDepthIndex=-1
         return int(mostSpaceIndex)
     
+    def prevent_front_wall(self, scan_arr:list, index:int):
+        sum = True
+        if scan_arr[index+10]<scan_arr[index-10]: sum = False
+        while scan_arr[index]<4.5:
+            if sum:
+                index-=1
+            else:
+                index+=1
+            
+            if index>=len(scan_arr)-1 or index<-1:
+                self.get_logger().info("FORCED BREAK")
+                break
+        return index
+            
+
     def obstacle_detect(self, scan_msg):
         
         self._scan = scan_msg.ranges
@@ -93,8 +112,9 @@ class Robot(Node):
         filterScan = self._scan[400:1200] 
         self.get_logger().info("Filetered Scanner " + str(filterScan))
         mostSpaceIx = self.most_space(filterScan)
-        self.get_logger().info("Index with most SPace: " + str(mostSpaceIx))
-        turn = 0.025*(mostSpaceIx-400)
+        finalIndex = self.prevent_front_wall(filterScan,mostSpaceIx)
+        self.get_logger().info("Index with most SPace: " + str(finalIndex))
+        turn = 0.025*(finalIndex-400)
         speed = abs(8/(turn+0.0001))
         # turn = 0.0
         # speed = 0.0
