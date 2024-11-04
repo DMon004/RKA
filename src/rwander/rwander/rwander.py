@@ -36,19 +36,26 @@ class Robot(Node):
 
         mostSpace = -1
         mostSpaceIndex = -1
+        maxSpaceWeight = -1
+        wayDepth = -1
 
         spaceAmount = 0
 
         for ix in range(len(scan_arr)):
-            if scan_arr[ix] == 1:
+            if scan_arr[ix] > 3:
                 spaceAmount+=1
+                if wayDepth<scan_arr[ix]:
+                    wayDepth = scan_arr[ix]
             else:
-                if spaceAmount>mostSpace:
-                    mostSpace=spaceAmount
+                cur_weight = spaceAmount*0.6 + wayDepth*0.4
+                # Calculate Weight amountSpace*0.6 + maxDepth*0.4
+                if cur_weight>maxSpaceWeight: # if new weight> max weight
+                    maxSpaceWeight = cur_weight
                     rightIndex = ix
                     leftIndex = ix-spaceAmount
                     mostSpaceIndex = (rightIndex+leftIndex)/2
                 spaceAmount = 0
+                wayDepth = -1
         return int(mostSpaceIndex)
     
     def obstacle_detect(self, scan_msg):
@@ -82,8 +89,9 @@ class Robot(Node):
     
         # TODO: add your code here
 
-        filterScan = [0 if val < 3 else 1 for val in self._scan[400:1200]] 
-        self.get_logger().info("FIletered Scanner " + str(filterScan))
+        #filterScan = [0 if val < 3 else 1 for val in self._scan[400:1200]]
+        filterScan = self._scan[400:1200] 
+        self.get_logger().info("Filetered Scanner " + str(filterScan))
         mostSpaceIx = self.most_space(filterScan)
         self.get_logger().info("Index with most SPace: " + str(mostSpaceIx))
         turn = 0.025*(mostSpaceIx-400)
