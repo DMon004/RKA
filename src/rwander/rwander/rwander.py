@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import glob
+import random
 from ament_index_python import get_package_share_directory
 import rclpy
 import rclpy.logging
@@ -42,13 +43,13 @@ class Robot(Node):
         spaceAmount = 0
 
         for ix in range(len(scan_arr)):
-            if scan_arr[ix] > 4.5:
+            if scan_arr[ix] > 2.6:
                 spaceAmount+=1
                 if wayDepth<scan_arr[ix]:
                     wayDepth = scan_arr[ix]
                     mostDepthIndex = ix
             else:
-                cur_weight = spaceAmount*0.9 + wayDepth*0.1
+                cur_weight = (spaceAmount*0.6 + wayDepth*0.4)#*random.uniform(0.85,1)
                 # Calculate Weight amountSpace*0.6 + maxDepth*0.4
                 if cur_weight>maxSpaceWeight: # if new weight> max weight
                     maxSpaceWeight = cur_weight
@@ -56,26 +57,25 @@ class Robot(Node):
                     leftIndex = ix-spaceAmount
                     spaceIndex = (rightIndex+leftIndex)/2
                     mostSpaceIndex = spaceIndex
-                    #mostSpaceIndex = (spaceIndex+mostDepthIndex)/2
+                    mostSpaceIndex = spaceIndex*0.9+mostDepthIndex*0.1
                 spaceAmount = 0
                 wayDepth = -1
                 mostDepthIndex=-1
         return int(mostSpaceIndex)
     
-    def prevent_front_wall(self, scan_arr:list, index:int):
-        sum = True
-        if scan_arr[index+10]<scan_arr[index-10]: sum = False
-        while scan_arr[index]<4.5:
-            if sum:
-                index-=1
-            else:
-                index+=1
-            
-            if index>=len(scan_arr)-1 or index<-1:
-                self.get_logger().info("FORCED BREAK")
-                break
+    def wall_prevention(self,scan_arr:list, index:int):
+        
+        if any([True if (val<2 or val==-np.inf) else False for val in scan_arr[:250]]):
+            min_depth = min(scan_arr[:250])
+            if min_depth==-np.inf: min_depth=-1
+            index+=int(75*(1+(1-min_depth)))
+            #if index<0: index=0
+        elif any([True if (val<2 or val==-np.inf) else False for val in scan_arr[550:]]):
+            min_depth = min(scan_arr[550:])
+            if min_depth==-np.inf: min_depth=-1
+            index-=int(75*(1+(1-min_depth)))
+            #if index>799: index=799
         return index
-            
 
     def obstacle_detect(self, scan_msg):
         
@@ -112,13 +112,13 @@ class Robot(Node):
         filterScan = self._scan[400:1200] 
         self.get_logger().info("Filetered Scanner " + str(filterScan))
         mostSpaceIx = self.most_space(filterScan)
-        finalIndex = mostSpaceIx
-        #finalIndex = self.prevent_front_wall(filterScan,mostSpaceIx)
+        #finalIndex = mostSpaceIx
+        finalIndex= self.wall_prevention(filterScan,mostSpaceIx)
         self.get_logger().info("Index with most SPace: " + str(finalIndex))
         turn = 0.025*(finalIndex-400)
-        speed = 8*(np.cos(turn))
-        # turn = 0.0
-        # speed = 0.0
+        speed = abs(0.8*(np.cos(turn)))
+        #turn = 0.0
+        #speed = 0.0
 
         
         ## end TODO
