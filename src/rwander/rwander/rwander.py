@@ -112,10 +112,11 @@ class Robot(Node):
         filterScan = self._scan[400:1200] 
         self.get_logger().info("Filetered Scanner " + str(filterScan))
         mostSpaceIx = self.most_space(filterScan)
-        finalIndex = self.prevent_front_wall(filterScan,mostSpaceIx)
+        finalIndex = mostSpaceIx
+        #finalIndex = self.prevent_front_wall(filterScan,mostSpaceIx)
         self.get_logger().info("Index with most SPace: " + str(finalIndex))
         turn = 0.025*(finalIndex-400)
-        speed = abs(8/(turn+0.0001))
+        speed = 8*(np.cos(turn))
         # turn = 0.0
         # speed = 0.0
 
