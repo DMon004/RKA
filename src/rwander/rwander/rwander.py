@@ -35,6 +35,8 @@ class Robot(Node):
     
     def most_space(self, scan_arr:list):
 
+        maxDepth = max(scan_arr)
+
         mostSpaceIndex = -1
         maxSpaceWeight = -1
         mostDepthIndex = -1
@@ -49,7 +51,7 @@ class Robot(Node):
                     wayDepth = scan_arr[ix]
                     mostDepthIndex = ix
             else:
-                cur_weight = (spaceAmount*0.6 + wayDepth*0.4)#*random.uniform(0.85,1)
+                cur_weight = (spaceAmount*1 + wayDepth*0.0)#*random.uniform(0.85,1)
                 # Calculate Weight amountSpace*0.6 + maxDepth*0.4
                 if cur_weight>maxSpaceWeight: # if new weight> max weight
                     maxSpaceWeight = cur_weight
@@ -57,25 +59,85 @@ class Robot(Node):
                     leftIndex = ix-spaceAmount
                     spaceIndex = (rightIndex+leftIndex)/2
                     mostSpaceIndex = spaceIndex
-                    mostSpaceIndex = spaceIndex*0.9+mostDepthIndex*0.1
+                    #mostSpaceIndex = spaceIndex*0.9+mostDepthIndex*0.1
                 spaceAmount = 0
                 wayDepth = -1
                 mostDepthIndex=-1
         return int(mostSpaceIndex)
     
     def wall_prevention(self,scan_arr:list, index:int):
-        
-        if any([True if (val<2 or val==-np.inf) else False for val in scan_arr[:250]]):
+
+        left_wall = any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[:250]])
+        right_wall = any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[550:]])
+
+        if left_wall and not right_wall:
             min_depth = min(scan_arr[:250])
             if min_depth==-np.inf: min_depth=-1
             index+=int(75*(1+(1-min_depth)))
-            #if index<0: index=0
-        elif any([True if (val<2 or val==-np.inf) else False for val in scan_arr[550:]]):
+            if index>799: 
+                index=799
+        elif right_wall and not left_wall:
             min_depth = min(scan_arr[550:])
             if min_depth==-np.inf: min_depth=-1
             index-=int(75*(1+(1-min_depth)))
-            #if index>799: index=799
+            if index<0: 
+                index=0
+        elif right_wall and left_wall:
+            pass
+        '''
+        elif any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[300:500]]):
+            max_right = max(scan_arr[:300])
+            max_left = max(scan_arr[500:])
+
+            if max_right>max_left:
+                index+=int(75*max_right)
+                if index>799: 
+                    index=799
+            else:
+                index-=int(75*max_left)
+                if index<0: 
+                    index=0'''
+
         return index
+
+    def wall_data(self,scan_arr:list):
+
+        most_left = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[:160]])
+        left = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[161:320]])
+        center = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[321:480]])
+        right = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[481:640]])
+        most_right = left = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[641:]])
+
+        if most_left:
+            if most_right:
+                self.get_logger().info("|   -   |")
+            else:
+                self.get_logger().info("|   -   o")
+        else:
+            if most_right:
+                self.get_logger().info("o   -   |")
+            else:
+                self.get_logger().info("o   -   o")
+
+        if left:
+            if right:
+                self.get_logger().info("|       |")
+            else:
+                self.get_logger().info("|       o")
+        else:
+            if right:
+                self.get_logger().info("o       |")
+            else:
+                self.get_logger().info("o       o")
+
+        if center:
+            self.get_logger().info("    _    ")
+        else:
+            self.get_logger().info("    o    ")
+        
+        
+
+        pass
 
     def obstacle_detect(self, scan_msg):
         
@@ -110,13 +172,20 @@ class Robot(Node):
 
         #filterScan = [0 if val < 3 else 1 for val in self._scan[400:1200]]
         filterScan = self._scan[400:1200] 
-        self.get_logger().info("Filetered Scanner " + str(filterScan))
+        #self.get_logger().info("Filetered Scanner " + str(filterScan))
         mostSpaceIx = self.most_space(filterScan)
         #finalIndex = mostSpaceIx
         finalIndex= self.wall_prevention(filterScan,mostSpaceIx)
         self.get_logger().info("Index with most SPace: " + str(finalIndex))
-        turn = 0.025*(finalIndex-400)
-        speed = abs(0.8*(np.cos(turn)))
+        if finalIndex > 799: self.get_logger().warn("OVER INDEX LIMIT")
+        if finalIndex <  0: self.get_logger().warn("UNDER INDEX LIMIT")
+        turn = 0.02*(finalIndex-400)
+        speed = abs(0.8*(1/np.cos(turn)))
+        self.get_logger().info("Turn Speed: "+str(turn))
+        self.get_logger().info("FW Speed: "+str(speed))
+
+        self.wall_data(filterScan)
+
         #turn = 0.0
         #speed = 0.0
 
