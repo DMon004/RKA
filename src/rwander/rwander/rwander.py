@@ -167,8 +167,6 @@ class Robot(Node):
         #finalIndex = mostSpaceIx
         finalIndex= self.wall_prevention(filterScan,mostSpaceIx)
         self.get_logger().info("Index with most SPace: " + str(finalIndex))
-        if finalIndex > 799: self.get_logger().warn("OVER INDEX LIMIT")
-        if finalIndex <  0: self.get_logger().warn("UNDER INDEX LIMIT")
         turn = 0.02*(finalIndex-400)
         speed = abs(0.8*(1/np.cos(turn)))
         self.get_logger().info("Turn Speed: "+str(turn))
