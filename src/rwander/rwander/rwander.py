@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import glob
-import random
 from ament_index_python import get_package_share_directory
 import rclpy
 import rclpy.logging
@@ -37,66 +36,57 @@ class Robot(Node):
 
         maxDepth = max(scan_arr)
 
-        mostSpaceIndex = -1
+        mostSpaceIndex = 0
         maxSpaceWeight = -1
         mostDepthIndex = -1
-        wayDepth = -1
+        wayDepth = []
 
         spaceAmount = 0
 
         for ix in range(len(scan_arr)):
             if scan_arr[ix] > 2.6:
                 spaceAmount+=1
-                if wayDepth<scan_arr[ix]:
-                    wayDepth = scan_arr[ix]
-                    mostDepthIndex = ix
+                wayDepth.append(scan_arr[ix])
+                
             else:
-                cur_weight = (spaceAmount*1 + wayDepth*0.0)#*random.uniform(0.85,1)
-                # Calculate Weight amountSpace*0.6 + maxDepth*0.4
-                if cur_weight>maxSpaceWeight: # if new weight> max weight
-                    maxSpaceWeight = cur_weight
-                    rightIndex = ix
-                    leftIndex = ix-spaceAmount
-                    spaceIndex = (rightIndex+leftIndex)/2
-                    mostSpaceIndex = spaceIndex
-                    #mostSpaceIndex = spaceIndex*0.9+mostDepthIndex*0.1
+                if spaceAmount>0:
+                    #wayDepth /= spaceAmount
+                    wayDepth = np.mean(wayDepth)
+                    cur_weight = (spaceAmount*1 + wayDepth*0.0)
+                    # Calculate Weight amountSpace*0.6 + maxDepth*0.4
+                    if cur_weight>maxSpaceWeight: # if new weight> max weight
+                        maxSpaceWeight = cur_weight
+                        rightIndex = ix
+                        leftIndex = ix-spaceAmount
+                        spaceIndex = (rightIndex+leftIndex)/2
+                        mostSpaceIndex = spaceIndex
+                        #mostSpaceIndex = spaceIndex*0.5+mostDepthIndex*0.5
                 spaceAmount = 0
-                wayDepth = -1
+                wayDepth = []
                 mostDepthIndex=-1
         return int(mostSpaceIndex)
     
     def wall_prevention(self,scan_arr:list, index:int):
 
-        left_wall = any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[:250]])
-        right_wall = any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[550:]])
+        left_wall = any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[:400]])
+        right_wall = any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[401:]])
 
-        if left_wall and not right_wall:
-            min_depth = min(scan_arr[:250])
-            if min_depth==-np.inf: min_depth=-1
-            index+=int(75*(1+(1-min_depth)))
-            if index>799: 
-                index=799
-        elif right_wall and not left_wall:
+        if right_wall and not left_wall:
             min_depth = min(scan_arr[550:])
             if min_depth==-np.inf: min_depth=-1
-            index-=int(75*(1+(1-min_depth)))
+            index-=int(8*(1+(1-min_depth)))
+            if index<0: 
+                index=0
+        elif left_wall and not right_wall:
+            min_depth = min(scan_arr[:250])
+            if min_depth==-np.inf: min_depth=-1
+            index+=int(8*(1+(1-min_depth)))
+            if index>799: 
+                index=799
             if index<0: 
                 index=0
         elif right_wall and left_wall:
             pass
-        '''
-        elif any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[300:500]]):
-            max_right = max(scan_arr[:300])
-            max_left = max(scan_arr[500:])
-
-            if max_right>max_left:
-                index+=int(75*max_right)
-                if index>799: 
-                    index=799
-            else:
-                index-=int(75*max_left)
-                if index<0: 
-                    index=0'''
 
         return index
 
@@ -184,7 +174,7 @@ class Robot(Node):
         self.get_logger().info("Turn Speed: "+str(turn))
         self.get_logger().info("FW Speed: "+str(speed))
 
-        self.wall_data(filterScan)
+        #self.wall_data(filterScan)
 
         #turn = 0.0
         #speed = 0.0
