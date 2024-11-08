@@ -74,7 +74,7 @@ class Robot(Node):
             self.scan_count = len(scan.ranges)
             self.range_min = scan.range_min
             for i in range(self.scan_count):
-                self.bearings.append(scan.angle_min + scan.angle_increment * i)
+                self.bearings.append(scan.angle_min + scan.angle_increment * i) # The angles of the rays?
         
         self.scan = [scan.ranges[i - 800] for i in range(self.scan_count)]
         ## TODO Add code here
@@ -83,6 +83,30 @@ class Robot(Node):
         ypos = np.empty((self.scan_count, 1), float)
 
         j = 0
+
+        for ix in range(len(self.scan)):
+            
+            # Infinity does not increase j
+
+            if self.scan[ix] == np.inf:
+                self.scan[ix] = self.max_range
+            elif self.scan[ix] == -np.inf:
+                self.scan[ix] = self.range_min
+
+            x = self.scan[ix] * np.cos(self.bearings[ix])
+            y = self.scan[ix] * np.sin(self.bearings[ix])
+
+            xpos = np.append(xpos, x)
+            ypos = np.append(ypos, y)
+
+            j+=1
+
+            pass
+
+        self.get_logger().info("X: "+str(xpos[400]))
+        self.get_logger().info("Y:"+str(ypos[400]))
+
+        #self.get_logger().info("Angle: "+str(np.degrees(self.bearings[400])))
 
         # Aukeratu "irakurketa motzak" eta kalkulatu dagozkien puntuak / Select the short readings and calculate the corresponding points
         
