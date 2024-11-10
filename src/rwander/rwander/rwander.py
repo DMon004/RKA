@@ -33,101 +33,84 @@ class Robot(Node):
         self._scan = []   
     
     def most_space(self, scan_arr:list):
-
-        maxDepth = max(scan_arr)
-
+        # Hasieraketak:
+        # mostSpaceIndex: Gordeko du nondik joan behar den robota
+        # maxSpace: for-ean aurkitu den pareta gabeko zati handienaren tamaina
+        # spaceAmount: Pareta bat aurkitu denetik pareta gabeko zatiaren tamaina gordeko du
         mostSpaceIndex = 0
-        maxSpaceWeight = -1
-        mostDepthIndex = -1
-        wayDepth = []
-
+        maxSpace= -1
         spaceAmount = 0
 
+        # LIDAR-ak lortu duen balio guztiak begiratzen ditugu, 
+        # ikusteko non dagoen pareta eta non ez
         for ix in range(len(scan_arr)):
+            # LIDAR-aren balioa 2.6 baino handiagoa bada, ez da pareta.
+            # 2.6 izatea erabaki dugu proba asko egin eta gero
             if scan_arr[ix] > 2.6:
+                # Pareta gabekoren tamaina haunditzen dugu
                 spaceAmount+=1
-                wayDepth.append(scan_arr[ix])
-                
             else:
+                # Ez bada pareta, ikusi behar dugu ea gutxienez pareta ez den pixka bat ikusi duen ikusi behar dugu
                 if spaceAmount>0:
-                    #wayDepth /= spaceAmount
-                    wayDepth = np.mean(wayDepth)
-                    cur_weight = (spaceAmount*1 + wayDepth*0.0)
-                    # Calculate Weight amountSpace*0.6 + maxDepth*0.4
-                    if cur_weight>maxSpaceWeight: # if new weight> max weight
-                        maxSpaceWeight = cur_weight
+                    # IKusi badu pareta ez den zerbait, 
+                    # jakin nahi dugu zati hori jadanik aurkitutako baino handiagoa bada
+                    if spaceAmount>maxSpace:
+
+                        # Behin jakinda oraingo bidea aurreko baino handiagoa dela,
+                        # Kalkulatzen dugu erdiko puntua, robota hortik joateko,
+                        # ez badugu beste zatia handiago bat
                         rightIndex = ix
                         leftIndex = ix-spaceAmount
                         spaceIndex = (rightIndex+leftIndex)/2
                         mostSpaceIndex = spaceIndex
-                        #mostSpaceIndex = spaceIndex*0.5+mostDepthIndex*0.5
                 spaceAmount = 0
-                wayDepth = []
-                mostDepthIndex=-1
         return int(mostSpaceIndex)
     
     def wall_prevention(self,scan_arr:list, index:int):
 
+        # Honeki, ikusten dugu ea robotaren aldea bakoiztean
+        # Paretaren bat gertuegi dagoen ala ez.
         left_wall = any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[:400]])
         right_wall = any([True if (val<1.5 or val==-np.inf) else False for val in scan_arr[401:]])
 
+        # Paretaren bat gertuegi badago,
+        # Paretatik aldendu behar dugu robota
+        # Gauza berdina egiten da pareta ezkerrean ala eskuinean badago
+        # Aldatzen den gauza bakarra robotaren norazkoa izango da, paretatik aldendu ahal izateko
         if right_wall and not left_wall:
-            min_depth = min(scan_arr[550:])
+
+            #Lortzen dugu paretatik gertuen dagoen puntuaren distantzia
+            min_depth = min(scan_arr[401:])
+
+            # -inf bueltatzen badu, hau da LIDAR-aren puntu itsuan badago pareta,
+            # -1 batera jartzen dugu distantzia, kalkuluak egin ahal izateko
             if min_depth==-np.inf: min_depth=-1
+
+            # Formula honekin kalkulatzen dugu zenabt biratu behar den robota paretatik aldentzeko
+            # 1-min_depth egiten dugu, paretaren oso gertu bagaude, bira handiago egiteko
+            # Aurreko balioarin +1 egiten diogu, gero 8rekin biderkatzerakoan, zenbakia handiago izateko.
             index-=int(8*(1+(1-min_depth)))
+
+            # Gertatu ahal da, lortuako balioa, nahi dugu direkzio batera joatea, adibidez,
+            # atzerantz-martxa egitea, horretarako behartzen dugu balio minimo batzuk izatera beti
+
             if index<0: 
                 index=0
+        # Beste paretarekin berdina egiten dugu    
         elif left_wall and not right_wall:
-            min_depth = min(scan_arr[:250])
+            min_depth = min(scan_arr[:400])
+
             if min_depth==-np.inf: min_depth=-1
+            
             index+=int(8*(1+(1-min_depth)))
             if index>799: 
                 index=799
-            if index<0: 
-                index=0
-        elif right_wall and left_wall:
-            pass
+
+        # Bi paretak aurkitzen baditugu, ez dugu ezer egin behar, hobe da robot-ak 'aurrera' jarraitzea
+        # Eta pareta batetik gerturatzen denean, bestetik aldendu beharko da, 
+        # beraz hor metodoak ondo funtzionatuko du.
 
         return index
-
-    def wall_data(self,scan_arr:list):
-
-        most_left = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[:160]])
-        left = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[161:320]])
-        center = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[321:480]])
-        right = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[481:640]])
-        most_right = left = any([True if (val<1 or val==-np.inf) else False for val in scan_arr[641:]])
-
-        if most_left:
-            if most_right:
-                self.get_logger().info("|   -   |")
-            else:
-                self.get_logger().info("|   -   o")
-        else:
-            if most_right:
-                self.get_logger().info("o   -   |")
-            else:
-                self.get_logger().info("o   -   o")
-
-        if left:
-            if right:
-                self.get_logger().info("|       |")
-            else:
-                self.get_logger().info("|       o")
-        else:
-            if right:
-                self.get_logger().info("o       |")
-            else:
-                self.get_logger().info("o       o")
-
-        if center:
-            self.get_logger().info("    _    ")
-        else:
-            self.get_logger().info("    o    ")
-        
-        
-
-        pass
 
     def obstacle_detect(self, scan_msg):
         
@@ -160,23 +143,27 @@ class Robot(Node):
     
         # TODO: add your code here
 
-        #filterScan = [0 if val < 3 else 1 for val in self._scan[400:1200]]
+        # _scan-ek ditugu zirkunferentzia osoko balioak, baina guk bakarrik behar dugu,
+        # zirkunferentzia horren goiko zatia, beraz array-a zatitzen dugu guk behar ditugun balioekin
         filterScan = self._scan[400:1200] 
-        #self.get_logger().info("Filetered Scanner " + str(filterScan))
+
+        # most_space metodoarik deitzen diogu, kalkulatuko duena nondik joan behar den robota
         mostSpaceIx = self.most_space(filterScan)
-        #finalIndex = mostSpaceIx
+
+        # Gero, ikusten dugu ea jasotako direkzioari ahaldaketak egin behar badiogu,
+        # paretaren bat oso gertu baldin badago
         finalIndex= self.wall_prevention(filterScan,mostSpaceIx)
-        self.get_logger().info("Index with most SPace: " + str(finalIndex))
+        
+        # Abiadura lineala eta abaiura angeluarra kalkulatzen ditugu
+        # Abiadura angeluarrarentzat, lortuako direkzioa, erdiarekiko diferentzia kalkulatzen dugu
+        # eta gero 0.02 bidertzen dugu
         turn = 0.02*(finalIndex-400)
+
+        # Abiadura lineala abiadura angeluarraren dependentea egin dugu.
+        # Arazo nagusia abiadura angeluarra 0 bazen zegoen, horretarako cos() etabili dugu, 
+        # 0 den balio bat ez duena inoiz bueltatuko
+        # Horretaz aparte abiadura positibioa izateaz ziurtatu gara, robot-a atzerantz ez joateko.
         speed = abs(0.8*(1/np.cos(turn)))
-        self.get_logger().info("Turn Speed: "+str(turn))
-        self.get_logger().info("FW Speed: "+str(speed))
-
-        #self.wall_data(filterScan)
-
-        #turn = 0.0
-        #speed = 0.0
-
         
         ## end TODO
         cmd_vel_msg_ = Twist()
@@ -186,10 +173,8 @@ class Robot(Node):
         self._cmd_vel_pub.publish( cmd_vel_msg_ ) 
     
     def pose_callback(self, msg):
-        pass
-        #self.get_logger().info("Robot pose: x: %.2f, y: %.2f, theta: %.2f"%(msg.x, msg.y, msg.theta))
+        self.get_logger().info("Robot pose: x: %.2f, y: %.2f, theta: %.2f"%(msg.x, msg.y, msg.theta))
         
-        pass
                                             
 def main(args=None):
     rclpy.init(args=args)
