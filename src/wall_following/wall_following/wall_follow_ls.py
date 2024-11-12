@@ -42,7 +42,7 @@ class Robot(Node):
         f = self.get_parameter('output_filename').value
         fout = f + '_' + str(self.kp) + '.csv'
         file = open(fout, 'w')
-        self.csvwriter = csv.writer(file, delimiter = ',')
+        self.csvwriter = csv.writer(file, delimiter = ';')
         self.csvwriter.writerow(['kp', 'error', 'v', 'w', 'x', 'y'])        
         
         self.laser_sub = self.create_subscription(LaserScan, 'scan', self.follow_wall, 1)
@@ -78,35 +78,33 @@ class Robot(Node):
         
         self.scan = [scan.ranges[i - 800] for i in range(self.scan_count)]
         ## TODO Add code here
-        # 1.- Kalkulatu irakurketa "motzen" proiekzioak / Compute the projection of short readings 
+        # 1.- Kalkulatu irakurketa "motzen" proiekzioak / Compute the projection of short readings
+
+        filtered_Scan = self.scan[400:800]
+        filtered_bearings = self.bearings[400:800]
+
         xpos = np.empty((self.scan_count, 1), float)
         ypos = np.empty((self.scan_count, 1), float)
 
         j = 0
 
-        for ix in range(len(self.scan)):
+        for ix in range(len(filtered_Scan)):
             
             # Infinity does not increase j
 
-            if self.scan[ix] == np.inf:
-                self.scan[ix] = self.max_range
-            elif self.scan[ix] == -np.inf:
-                self.scan[ix] = self.range_min
+            if filtered_Scan[ix]> 0 and filtered_Scan[ix]<2 and abs(filtered_Scan[ix])!=np.inf:
 
-            x = self.scan[ix] * np.cos(self.bearings[ix])
-            y = self.scan[ix] * np.sin(self.bearings[ix])
+                x = filtered_Scan[ix] * np.cos(filtered_bearings[ix])
+                y = filtered_Scan[ix] * np.sin(filtered_bearings[ix])
 
-            xpos = np.append(xpos, x)
-            ypos = np.append(ypos, y)
+                xpos[j] = x
+                ypos[j] = y
+                #self.get_logger().info("XPOS: "+str(x))
+                #self.get_logger().info("YPOS: "+str(y))
 
-            j+=1
+                j+=1
 
             pass
-
-        self.get_logger().info("X: "+str(xpos[400]))
-        self.get_logger().info("Y:"+str(ypos[400]))
-
-        #self.get_logger().info("Angle: "+str(np.degrees(self.bearings[400])))
 
         # Aukeratu "irakurketa motzak" eta kalkulatu dagozkien puntuak / Select the short readings and calculate the corresponding points
         
@@ -126,12 +124,12 @@ class Robot(Node):
             c1 = float(model.coef_)
 
 	        # Kalkulatu robota eta paretaren arteko angelua / Calculate the angle between the robot and the wall
-            theta = 0.0
+            theta = c1-theta2
             self.get_logger().info("Malda: %.2f Angelua: %.2f (%.2f degrees)"%(c1, theta, m.degrees(theta)))
             
             # 3.- Abiadurak finkatu / Set velocities
             w = self.kp * theta
-            v = 0.0
+            v = 0.65
             self.get_logger().info("Abiadurak: v = %.2f w = %.2f"%(v, w))
             ## END TODO
 
