@@ -4,7 +4,7 @@ import rclpy
 from rclpy.node import Node
 
 from sensor_msgs.msg import LaserScan
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import Twist, Pose2D
 from nav_msgs.msg import Odometry
 import numpy as np
 import math as m
@@ -24,7 +24,7 @@ class Robot(Node):
             parameters=[
                 ('kp', 1.5),
                 ('vel_topic', 'cmd_vel'),
-                ('odom_topic', 'odom'),
+                ('pose_topic', 'rosbot_pose'),
                 ('output_filename', 'wf_ls')
             ]
         )
@@ -33,7 +33,7 @@ class Robot(Node):
         # velocity topic
         self.vel_topic = self.get_parameter('vel_topic').value
         # odometry topic
-        self.odom_topic = self.get_parameter('odom_topic').value
+        self.odom_topic = self.get_parameter('pose_topic').value
 
         ''' output filename (with no extension). 
         kp value and .csv extension will be added 
@@ -43,10 +43,10 @@ class Robot(Node):
         fout = f + '_' + str(self.kp) + '.csv'
         file = open(fout, 'w')
         self.csvwriter = csv.writer(file, delimiter = ';')
-        self.csvwriter.writerow(['kp', 'error', 'v', 'w', 'x', 'y'])        
+        self.csvwriter.writerow(['kp', 'c0', 'c1', 'theta2', 'v', 'w', 'x', 'y'])        
         
         self.laser_sub = self.create_subscription(LaserScan, 'scan', self.follow_wall, 1)
-        self.odom_sub = self.create_subscription(Odometry, self.odom_topic, self.get_position, 1)
+        self.odom_sub = self.create_subscription(Pose2D, self.odom_topic, self.get_position, 1)
         self.vel_pub = self.create_publisher(Twist, self.vel_topic, 1)
         
         self.scan_count = 0
@@ -60,11 +60,11 @@ class Robot(Node):
         
     def get_position(self, msg):
         # Gets robot pose (x, y, yaw) from odometry
-        self.rx = msg.pose.pose.position.x
-        self.ry = msg.pose.pose.position.y
-        quat = msg.pose.pose.orientation
-        roll, pitch, yaw = euler_from_quaternion([quat.x, quat.y, quat.z, quat.w])
-        self.rtheta = yaw
+        self.rx = msg.x
+        self.ry = msg.y
+        #quat = msg.pose.pose.orientation
+        #roll, pitch, yaw = euler_from_quaternion([quat.x, quat.y, quat.z, quat.w])
+        #self.rtheta = yaw
 
     def follow_wall(self, scan):             
         lscan = scan.ranges
@@ -99,8 +99,6 @@ class Robot(Node):
 
                 xpos[j] = x
                 ypos[j] = y
-                #self.get_logger().info("XPOS: "+str(x))
-                #self.get_logger().info("YPOS: "+str(y))
 
                 j+=1
 

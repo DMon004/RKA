@@ -1,3 +1,3 @@
 # generated from colcon_core/shell/template/hook_prepend_value.sh.em
 
-_colcon_prepend_unique_value PYTHONPATH "/users/1047487/rka/ros/build/rosbot_spin"
+_colcon_prepend_unique_value PYTHONPATH "/home/daniel/Documents/GitHub/RKA/build/rosbot_spin"

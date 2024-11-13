@@ -1,2 +1,3 @@
 [console_scripts]
 rspin = rosbot_spin.rosbot_spin:main
+

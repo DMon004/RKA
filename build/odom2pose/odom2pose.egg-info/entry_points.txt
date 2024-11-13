@@ -1,2 +1,3 @@
 [console_scripts]
 odom2pose = odom2pose.odom2pose:main
+
