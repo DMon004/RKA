@@ -2,11 +2,7 @@ Metadata-Version: 2.1
 Name: rwander
 Version: 0.0.0
 Summary: TODO: Package description
-Home-page: UNKNOWN
 Maintainer: bee
 Maintainer-email: bee@todo.todo
 License: TODO: License declaration
-Platform: UNKNOWN
-
-UNKNOWN
-
+Requires-Dist: setuptools

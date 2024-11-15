@@ -10,7 +10,7 @@ import os
 
 def generate_launch_description():
     kp_arg = DeclareLaunchArgument(
-        "kp", default_value=TextSubstitution(text="1.5")
+        "kp", default_value=TextSubstitution(text="0.95")
     )
 
     wall_following_node = Node(

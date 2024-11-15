@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import rclpy
+from datetime import datetime
 from rclpy.node import Node
 
 from sensor_msgs.msg import LaserScan
@@ -22,7 +23,7 @@ class Robot(Node):
         self.declare_parameters(
             namespace='',
             parameters=[
-                ('kp', 1.5),
+                ('kp', 0.95),
                 ('vel_topic', 'cmd_vel'),
                 ('pose_topic', 'rosbot_pose'),
                 ('output_filename', 'wf_ls')
@@ -43,7 +44,7 @@ class Robot(Node):
         fout = f + '_' + str(self.kp) + '.csv'
         file = open(fout, 'w')
         self.csvwriter = csv.writer(file, delimiter = ';')
-        self.csvwriter.writerow(['kp', 'c0', 'c1', 'theta2', 'v', 'w', 'x', 'y'])        
+        self.csvwriter.writerow(['kp', 'c0', 'c1', 'theta2', 'v', 'w', 'x', 'y', 'time'])        
         
         self.laser_sub = self.create_subscription(LaserScan, 'scan', self.follow_wall, 1)
         self.odom_sub = self.create_subscription(Pose2D, self.odom_topic, self.get_position, 1)
@@ -57,6 +58,7 @@ class Robot(Node):
         self.ry = 0
         self.rtheta = 0
         self.uninitialized = True
+        self.startTime = datetime.now()
         
     def get_position(self, msg):
         # Gets robot pose (x, y, yaw) from odometry
@@ -141,7 +143,7 @@ class Robot(Node):
             cmd_vel_msg.linear.y  = 0.0
             cmd_vel_msg.angular.z = 0.0
 
-        self.csvwriter.writerow([f"{self.kp:.2f}", f"{c0:.2f}", f"{c1:.2f}", f"{theta2:.2f}", f"{cmd_vel_msg.linear.x:.2f}", f"{cmd_vel_msg.angular.z:.2f}", f"{self.rx:.2f}", f"{self.ry:.2f}"])    
+        self.csvwriter.writerow([f"{self.kp:.2f}", f"{c0:.2f}", f"{c1:.2f}", f"{theta2:.2f}", f"{cmd_vel_msg.linear.x:.2f}", f"{cmd_vel_msg.angular.z:.2f}", f"{self.rx:.2f}", f"{self.ry:.2f}", f"{(datetime.now()-self.startTime).total_seconds()}"])    
         self.vel_pub.publish( cmd_vel_msg)
 
 def main(args=None):
