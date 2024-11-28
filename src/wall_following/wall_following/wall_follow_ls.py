@@ -96,10 +96,10 @@ class Robot(Node):
         for ix in range(len(filtered_Scan)):
             
             # Infinity does not increase j
-	    # Jasotako balioa tarte zehatz batean egon behar da informazio lagungarria emateko
+	    # Jasotako balioa tarte zehatz batean egon behar da informazio lagungarria emateko, 2 metro kasu honetan, eta ez ditugu balio infinituak nahi.
             if filtered_Scan[ix]> 0 and filtered_Scan[ix]<2 and abs(filtered_Scan[ix])!=np.inf:
 
-		# Angelua eta distantzia izanda, kalkulatu ahal dezakegu paretaren x eta y
+		# Angelua eta distantzia izanda, kalkulatu ahal dezakegu proiekzioak
                 x = filtered_Scan[ix] * np.cos(filtered_bearings[ix])
                 y = filtered_Scan[ix] * np.sin(filtered_bearings[ix])
 
