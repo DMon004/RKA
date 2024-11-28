@@ -82,20 +82,24 @@ class Robot(Node):
         ## TODO Add code here
         # 1.- Kalkulatu irakurketa "motzen" proiekzioak / Compute the projection of short readings
 
+	# Scan-aren balioak filtratu, beharrezkoak direnak izateko.
         filtered_Scan = self.scan[400:800]
         filtered_bearings = self.bearings[400:800]
 
+	# Hasieratu posizioa gordetzeko arrayak
         xpos = np.empty((self.scan_count, 1), float)
         ypos = np.empty((self.scan_count, 1), float)
 
         j = 0
 
+	# Filtratutako balioak begiratu
         for ix in range(len(filtered_Scan)):
             
             # Infinity does not increase j
-
+	    # Jasotako balioa tarte zehatz batean egon behar da informazio lagungarria emateko
             if filtered_Scan[ix]> 0 and filtered_Scan[ix]<2 and abs(filtered_Scan[ix])!=np.inf:
 
+		# Angelua eta distantzia izanda, kalkulatu ahal dezakegu paretaren x eta y
                 x = filtered_Scan[ix] * np.cos(filtered_bearings[ix])
                 y = filtered_Scan[ix] * np.sin(filtered_bearings[ix])
 
